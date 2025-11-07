@@ -17,23 +17,7 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#111}
 
-    /* banner rotator */
-    .ad-rotator, .native-rotator {
-      width:100%;
-      text-align:center;
-      background:#fff;
-      padding:10px 0;
-      margin-bottom:20px;
-    }
-    .ad-rotator .banner, .native-rotator .native {
-      display:none;
-      margin:0 auto;
-    }
-    .ad-rotator .banner.active, .native-rotator .native.active {
-      display:block;
-    }
-
-    /* top bar */
+    /* HEADER */
     .topbar{background:var(--red);color:#fff}
     .topbar .inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;padding:12px 20px}
     .logo img{height:34px}
@@ -44,81 +28,55 @@
     .search{background:rgba(255,255,255,0.12);border-radius:6px;padding:6px 10px;cursor:pointer}
     .signin{background:#fff;color:var(--red);padding:6px 12px;border-radius:6px;font-weight:700;cursor:pointer;border:none}
 
-    /* page content */
-    .page{max-width:var(--container);margin:28px auto;padding:0 20px;display:block}
-    .card{background:var(--card);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+    /* IKLAN */
+    .ad-wrapper{
+      width:100%;
+      text-align:center;
+      background:#fff;
+      padding:10px 0;
+      margin:12px 0 20px 0;
+      border-radius:6px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.08);
+    }
+    .ad-desktop { display:block; }
+    .ad-mobile { display:none; }
 
-    /* hero */
+    @media(max-width:768px){
+      .nav{display:none}
+      .ad-desktop { display:none; }
+      .ad-mobile { display:block; }
+    }
+
+    /* KONTEN */
+    .page{max-width:var(--container);margin:20px auto;padding:0 20px}
+    .card{background:var(--card);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
     .hero{padding:22px;border-radius:10px;overflow:hidden}
-    .hero-inner{display:grid;grid-template-columns:1fr;align-items:start}
     .hero-figure{position:relative;height:520px;background:#000;border-radius:8px;overflow:hidden}
     .hero-video{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
     .hero-overlay{position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:#fff;text-align:center}
     .hero-overlay h2{font-size:32px;margin:0;font-weight:800;text-shadow:0 3px 10px rgba(0,0,0,0.6)}
-    .hero-overlay .watch-btn{background:var(--red);border:none;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.2s;}
-    .hero-overlay .watch-btn:hover{background:var(--dark)}
+    .watch-btn{background:var(--red);border:none;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-size:16px}
+    .watch-btn:hover{background:var(--dark)}
 
-    .section-title{font-size:30px;margin:6px 0 12px 0;font-weight:800}
-
-    .image-article {
-      display:block;
-      margin:20px auto;
-      max-width:100%;
-      border-radius:10px;
+    /* CHAT ICON */
+    .chat-icon{
+      position:fixed;right:15px;bottom:15px;width:56px;height:56px;border-radius:50%;
+      background:var(--red);display:flex;justify-content:center;align-items:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.25);cursor:pointer;z-index:9999;transition:transform .2s ease;
     }
+    .chat-icon:hover{transform:scale(1.08);background:var(--dark)}
+    .chat-icon svg{width:28px;height:28px;fill:white;}
 
-    @media (max-width:1000px){ .hero-figure{height:420px} }
-    @media (max-width:600px){
+    @media(max-width:600px){
       .hero-figure{height:300px}
-      .topbar .inner{padding:10px}
-      .nav{display:none}
+      .chat-icon{width:50px;height:50px}
+      .chat-icon svg{width:24px;height:24px}
     }
   </style>
 </head>
 <body>
 
-  <!-- Banner Rotator 728x90 -->
-  <div class="ad-rotator" id="adRotator">
-    <!-- 6 iklan tumpuk -->
-    <div class="banner active">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-    <div class="banner">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-    <div class="banner">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-    <div class="banner">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-    <div class="banner">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-    <div class="banner">
-      <script type="text/javascript">
-        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
-      </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-  </div>
-
-  <!-- top red bar -->
+  <!-- HEADER -->
   <header class="topbar">
     <div class="inner">
       <div class="logo">
@@ -139,131 +97,153 @@
     </div>
   </header>
 
-  <!-- page content -->
+  <!-- 🔰 IKLAN ADSTERRA ATAS -->
+  <div class="ad-wrapper">
+    <div class="ad-desktop">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '8b1fd8b644c56d08c9ac6ee9d61eda09',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/8b1fd8b644c56d08c9ac6ee9d61eda09/invoke.js"></script>
+    </div>
+    <div class="ad-mobile">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '8b1fd8b644c56d08c9ac6ee9d61eda09',
+          'format' : 'iframe',
+          'height' : 100,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/8b1fd8b644c56d08c9ac6ee9d61eda09/invoke.js"></script>
+    </div>
+  </div>
+
+  <!-- KONTEN -->
   <main class="page">
-    <section>
-      <div class="card hero">
-        <div class="hero-inner">
-          <div class="section-title">High School Sports</div>
-          <div class="hero-figure">
-            <video class="hero-video" autoplay muted loop playsinline>
-              <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4" type="video/mp4">
-              Browser Anda tidak mendukung video HTML5.
-            </video>
-            <div class="hero-overlay">
-              <h2>SUBSCRIBE TO WATCH</h2>
-              <button class="watch-btn" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">
-                Watch Live
-              </button>
-            </div>
-          </div>
+    <div class="card hero">
+      <div class="hero-figure">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4" type="video/mp4">
+          Browser Anda tidak mendukung video HTML5.
+        </video>
+        <div class="hero-overlay">
+          <h2>SUBSCRIBE TO WATCH</h2>
+          <button class="watch-btn" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php','_blank')">Watch Live</button>
         </div>
       </div>
+    </div>
 
-      <div style="height:18px"></div>
-      <div class="card" style="padding:18px;border-radius:10px">
-        <h2 style="margin-top:0">Latest Articles</h2>
-        <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-          <h3 style="margin:6px 0">FOOTBALL: IMG vs. St. Frances is off</h3>
-          <p style="margin:0;color:var(--muted)">Florida power says postponement of contest from this week to mid-December raised concerns about safety and college transition for seniors.</p>
-        </article>
-        <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-          <h3 style="margin:6px 0">FOOTBALL: MaxPreps Top 25 scoreboard</h3>
-          <p style="margin:0;color:var(--muted)">No. 21 Cass Tech, No. 23 Clay-Chalkville only MaxPreps Top 25 teams in postseason action this week.</p>
-        </article>
+    <div style="height:30px"></div>
+
+    <!-- 🔰 IKLAN ADSTERRA BAWAH -->
+    <div class="ad-wrapper">
+      <div class="ad-desktop">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '8b1fd8b644c56d08c9ac6ee9d61eda09',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//formatsquareabominable.com/8b1fd8b644c56d08c9ac6ee9d61eda09/invoke.js"></script>
       </div>
-
-      <!-- Native Banner Rotator (1) -->
-      <div class="native-rotator" id="nativeRotator1">
-        <!-- 6 tumpuk -->
-        <div class="native active">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
+      <div class="ad-mobile">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '8b1fd8b644c56d08c9ac6ee9d61eda09',
+            'format' : 'iframe',
+            'height' : 100,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//formatsquareabominable.com/8b1fd8b644c56d08c9ac6ee9d61eda09/invoke.js"></script>
       </div>
+    </div>
 
-      <!-- Gambar di bawah artikel -->
-      <img src="https://archive.org/download/capture_20251107_1941/Capture.JPG" alt="Article Image" class="image-article">
-
-      <!-- Native Banner Rotator (2) -->
-      <div class="native-rotator" id="nativeRotator2">
-        <!-- 6 tumpuk -->
-        <div class="native active">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-        <div class="native">
-          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
-          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
-        </div>
-      </div>
-    </section>
+    <!-- 🔹 Latest Articles -->
+    <div style="height:18px"></div>
+    <div class="card" style="padding:18px;border-radius:10px">
+      <h2 style="margin-top:0">Latest Articles</h2>
+      <article style="padding:10px 0;border-top:1px solid #f0f0f0">
+        <h3 style="margin:6px 0">FOOTBALL: IMG vs. St. Frances is off</h3>
+        <p style="margin:0;color:var(--muted)">Florida power says postponement of contest from this week to mid-December raised concerns about safety and college transition for seniors.</p>
+      </article>
+      <article style="padding:10px 0;border-top:1px solid #f0f0f0">
+        <h3 style="margin:6px 0">FOOTBALL: MaxPreps Top 25 scoreboard</h3>
+        <p style="margin:0;color:var(--muted)">No. 21 Cass Tech, No. 23 Clay-Chalkville only MaxPreps Top 25 teams in postseason action this week.</p>
+      </article>
+    </div>
   </main>
 
-  <!-- Rotasi script -->
-  <script>
-    // fungsi rotasi
-    function startRotation(selector, interval){
-      const items = document.querySelectorAll(selector);
-      if(items.length === 0) return;
-      let current = 0;
-      setInterval(()=>{
-        items[current].classList.remove('active');
-        current = (current + 1) % items.length;
-        items[current].classList.add('active');
-      }, interval);
-    }
-    // jalankan rotasi (2 detik = 2000 ms)
-    startRotation('#adRotator .banner', 2000);
-    startRotation('#nativeRotator1 .native', 2000);
-    startRotation('#nativeRotator2 .native', 2000);
-  </script>
+  <!-- IKON BANTUAN (CHAT ICON) -->
+<div class="chat-icon" onclick="alert('Subscribe to Watch')">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 3C7.03 3 3 6.58 3 11c0 2.39 1.2 4.55 3.17 6.03L5 21l3.45-1.84C9.36 19.38 10.65 19.7 12 19.7c4.97 0 9-3.58 9-8s-4.03-8-9-8zm.01 14.2c-1.14 0-2.25-.25-3.24-.72l-.23-.11-2.05 1.09.55-2.16-.15-.23C5.4 13.63 5 12.34 5 11c0-3.31 3.14-6 7-6s7 2.69 7 6-3.14 6-6.99 6.2z"/>
+  </svg>
+</div>
 
+
+  <!-- 🔹 Histats -->
   <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4980999&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+  <script type="text/javascript">var _Hasync= _Hasync|| [];
+  _Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
+  _Hasync.push(['Histats.fasi', '1']);
+  _Hasync.push(['Histats.track_hits', '']);
+  (function() {
+  var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+  hs.src = ('//s10.histats.com/js15_as.js');
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+  })();</script>
+  <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4980999&101" alt="" border="0"></a></noscript>
+  <!-- Histats.com  END  -->
+<!-- Gambar dan Artikel Tambahan -->
+<div style="margin-top:40px; text-align:center; background:#fff; padding:20px; border-radius:12px;">
+  <img src="https://archive.org/download/capture_20251107_1941/Capture.JPG" alt="High school football: Landen Williams-Callis, David Gabriel-Georges headline MaxPreps National Player of the Year watch list" style="width:100%; border-radius:12px; max-height:600px; object-fit:cover;">
+  <div style="text-align:left; padding:20px 10px; max-width:900px; margin:auto;">
+    <h3 style="margin-top:15px;">High school football: Landen Williams-Callis, David Gabriel-Georges headline MaxPreps National Player of the Year watch list</h3>
+    <p style="color:var(--muted); font-size:15px;">Find out who is in the running to join the list of past winners that includes Derrick Henry, Kyler Murray and Caleb Downs.</p>
+    <p style="font-weight:bold; margin-bottom:4px;">Thumbnail image of this article’s writer: Zack Poff</p>
+    <p style="margin-top:0;">By <strong>Zack Poff</strong></p>
+    <p>The 2025 high school football season is entering the postseason phase, meaning it is time to look at standout performers in the mix for MaxPreps National Player of the Year. Derrick Henry, Kyler Murray, Bryce Young, Jaxson Dart and Caleb Downs are some of the notable past winners of the award.</p>
+    <p>Tyler Atkinson of Grayson (Loganville, Ga.), Jared Curtis of Nashville Christian (Nashville, Tenn.) and Madden Williams of St. John Bosco (Bellflower, Calif.) are among the 10 players highlighted on the watch list. The race is still wide open, however, and players not featured on this list are not excluded from consideration for MaxPreps National Player of the Year, which will be named in January.</p>
+    <p>Atkinson has been a huge contributor for the No. 2 team in the MaxPreps Top 25 and after missing the first two games of the season. He leads the defending AAAAAA state champs in tackles (55), tackles for loss (18) and sacks (7) as they enter the playoffs 10-0.</p>
+    <p>Curtis was named the 2024 MaxPreps Tennessee Player of the Year and is putting together another remarkable season for the Eagles. He has thrown for 1,587 yards and 26 touchdowns to go with 44 carries for 392 yards and seven more scores while leading Nashville Christian to a 10-0 record.</p>
+    <p>Williams just broke St. John Bosco's school record hauling in his 27th career touchdown reception and has been a playmaker for the No. 4 team in the MaxPreps Top 25. He has had at least one receiving score in every game this season.</p>
+    <p>The list includes seven seniors, two juniors and one sophomore. Roye Oliver III of Hamilton (Chandler, Ariz.) was the lone player from the Class of 2028 selected, while David Gabriel-Georges of Baylor (Chattanooga, Tenn.) and Landen Williams-Callis of Randle (Richmond, Texas) were the two juniors.</p>
+    <p>Team success and individual production are the primary factors in determining MaxPreps National Player of the Year. The 10 candidates featured below play for programs with a 94-3 overall record and nine of them play for teams in our expanded top 100 rankings.</p>
+    <p><strong>Past MaxPreps National Players of the Year:</strong><br>
+    2006 — Riley Dodge, QB, Southlake Carroll (Southlake, Texas)<br>
+    2007 — Terrelle Pryor, QB, Jeannette (Pa.)<br>
+    2008 — Garrett Gilbert, QB, Lake Travis (Austin, Texas)<br>
+    2009 — Dillon Baxter, ATH, Mission Bay (San Diego)<br>
+    2010 — Dano Graves, QB, Folsom (Calif.)<br>
+    2011 — Johnathan Gray, RB, Aledo (Texas)<br>
+    2012 — Derrick Henry, RB, Yulee (Fla.)<br>
+    2013 — Kyler Murray, QB, Allen (Texas)<br>
+    2014 — Kyler Murray, QB, Allen<br>
+    2015 — Derrick Brown, DL, Lanier (Sugar Hill, Ga.)<br>
+    2016 — Tate Martell, QB, Bishop Gorman (Las Vegas)<br>
+    2017 — J.T. Daniels, QB, Mater Dei (Santa Ana, Calif.)<br>
+    2018 — Bru McCoy, WR, Mater Dei<br>
+    2019 — D.J. Uiagalelei, QB, St. John Bosco (Bellflower, Calif.) / Bryce Young, QB, Mater Dei<br>
+    2020 — Jaxson Dart, QB, Corner Canyon (Draper, Utah)<br>
+    2021 — Cade Klubnik, QB, Westlake (Austin, Texas)<br>
+    2022 — Caleb Downs, S, Mill Creek (Hoschton, Ga.)<br>
+    2023 — D.J. Lagway, QB, Willis (Texas)<br>
+    2024 — Quentin Gibson, WR, North Crowley (Fort Worth, Texas)
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
