@@ -17,6 +17,22 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#111}
 
+    /* banner rotator */
+    .ad-rotator, .native-rotator {
+      width:100%;
+      text-align:center;
+      background:#fff;
+      padding:10px 0;
+      margin-bottom:20px;
+    }
+    .ad-rotator .banner, .native-rotator .native {
+      display:none;
+      margin:0 auto;
+    }
+    .ad-rotator .banner.active, .native-rotator .native.active {
+      display:block;
+    }
+
     /* top bar */
     .topbar{background:var(--red);color:#fff}
     .topbar .inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;padding:12px 20px}
@@ -36,75 +52,20 @@
     .hero{padding:22px;border-radius:10px;overflow:hidden}
     .hero-inner{display:grid;grid-template-columns:1fr;align-items:start}
     .hero-figure{position:relative;height:520px;background:#000;border-radius:8px;overflow:hidden}
-    .hero-video{
-      width:100%;height:100%;
-      object-fit:cover;
-      display:block;
-      border-radius:8px;
-    }
-    .hero-overlay{
-      position:absolute;left:0;top:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.45);
-      display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;
-      color:#fff;text-align:center;
-    }
+    .hero-video{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
+    .hero-overlay{position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:#fff;text-align:center}
     .hero-overlay h2{font-size:32px;margin:0;font-weight:800;text-shadow:0 3px 10px rgba(0,0,0,0.6)}
-    .hero-overlay .watch-btn{
-      background:var(--red);border:none;color:#fff;
-      padding:10px 24px;border-radius:6px;font-weight:700;
-      font-size:16px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);
-      transition:0.2s;
-    }
+    .hero-overlay .watch-btn{background:var(--red);border:none;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.2s;}
     .hero-overlay .watch-btn:hover{background:var(--dark)}
-
-    /* ad banner */
-    .ad-banner{width:100%;text-align:center;margin-bottom:20px}
 
     .section-title{font-size:30px;margin:6px 0 12px 0;font-weight:800}
 
-    /* overlay */
-    .redirect-overlay{
-      position:fixed;
-      left:0;top:0;width:100%;height:100%;
-      background:rgba(255,255,255,0.95);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      flex-direction:column;
-      gap:20px;
-      padding:20px;
+    .image-article {
+      display:block;
+      margin:20px auto;
+      max-width:100%;
+      border-radius:10px;
     }
-    .redirect-banner {
-      width:728px;
-      max-width:calc(100% - 40px);
-      height:90px;
-      background:#f0f0f0;
-      border:1px solid #ddd;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#666;
-      font-weight:700;
-      border-radius:6px;
-    }
-    .redirect-box{
-      background:#fff;
-      border-radius:8px;
-      padding:28px 36px;
-      box-shadow:0 6px 24px rgba(0,0,0,0.12);
-      text-align:center;
-      max-width:520px;
-      width:90%;
-    }
-    .redirect-box h1{margin:0;font-size:26px;color:#222}
-    .redirect-box p{margin:8px 0 0 0;color:#666}
-    .spinner{
-      margin:18px auto 0 auto;
-      width:36px;height:36px;border:4px solid #eee;border-top-color:var(--red);border-radius:50%;
-      animation:rot 1s linear infinite;
-    }
-    @keyframes rot{ to { transform:rotate(360deg); } }
 
     @media (max-width:1000px){ .hero-figure{height:420px} }
     @media (max-width:600px){
@@ -115,6 +76,47 @@
   </style>
 </head>
 <body>
+
+  <!-- Banner Rotator 728x90 -->
+  <div class="ad-rotator" id="adRotator">
+    <!-- 6 iklan tumpuk -->
+    <div class="banner active">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+    <div class="banner">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+    <div class="banner">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+    <div class="banner">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+    <div class="banner">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+    <div class="banner">
+      <script type="text/javascript">
+        atOptions = {'key':'71e3506862232b8bbcecc3eee94c4749','format':'iframe','height':90,'width':728,'params':{}};
+      </script>
+      <script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
+    </div>
+  </div>
 
   <!-- top red bar -->
   <header class="topbar">
@@ -139,36 +141,18 @@
 
   <!-- page content -->
   <main class="page">
-
-    <!-- Banner 728x90 -->
-    <div class="ad-banner">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '71e3506862232b8bbcecc3eee94c4749',
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-
-    <!-- hero section with video -->
     <section>
       <div class="card hero">
         <div class="hero-inner">
           <div class="section-title">High School Sports</div>
           <div class="hero-figure">
-            <!-- video background -->
             <video class="hero-video" autoplay muted loop playsinline>
               <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4" type="video/mp4">
               Browser Anda tidak mendukung video HTML5.
             </video>
             <div class="hero-overlay">
               <h2>SUBSCRIBE TO WATCH</h2>
-              <button class="watch-btn"
-                onclick="showLoadingAndRedirect('https://nfhsnetwork.hudl-stream.xyz/register.php')">
+              <button class="watch-btn" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">
                 Watch Live
               </button>
             </div>
@@ -176,72 +160,110 @@
         </div>
       </div>
 
-      <!-- latest articles -->
       <div style="height:18px"></div>
       <div class="card" style="padding:18px;border-radius:10px">
         <h2 style="margin-top:0">Latest Articles</h2>
         <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-          <h3 style="margin:6px 0">Top 25 Rankings | Week 5</h3>
-          <p style="margin:0;color:var(--muted)">A summary of the biggest upsets and movers from around the country.</p>
+          <h3 style="margin:6px 0">FOOTBALL: IMG vs. St. Frances is off</h3>
+          <p style="margin:0;color:var(--muted)">Florida power says postponement of contest from this week to mid-December raised concerns about safety and college transition for seniors.</p>
         </article>
         <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-          <h3 style="margin:6px 0">Player of the Week: Jordan Smith</h3>
-          <p style="margin:0;color:var(--muted)">A big performance helped the Tigers clinch a playoff spot.</p>
+          <h3 style="margin:6px 0">FOOTBALL: MaxPreps Top 25 scoreboard</h3>
+          <p style="margin:0;color:var(--muted)">No. 21 Cass Tech, No. 23 Clay-Chalkville only MaxPreps Top 25 teams in postseason action this week.</p>
         </article>
       </div>
-    </section>
 
+      <!-- Native Banner Rotator (1) -->
+      <div class="native-rotator" id="nativeRotator1">
+        <!-- 6 tumpuk -->
+        <div class="native active">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+      </div>
+
+      <!-- Gambar di bawah artikel -->
+      <img src="https://archive.org/download/capture_20251107_1941/Capture.JPG" alt="Article Image" class="image-article">
+
+      <!-- Native Banner Rotator (2) -->
+      <div class="native-rotator" id="nativeRotator2">
+        <!-- 6 tumpuk -->
+        <div class="native active">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+        <div class="native">
+          <script async src="//formatsquareabominable.com/e9cee9a43e2783ab1bb862cdd5fed1b9/invoke.js"></script>
+          <div id="container-e9cee9a43e2783ab1bb862cdd5fed1b9"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Redirect overlay -->
-  <div class="redirect-overlay" id="redirectOverlay" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="redirect-banner" id="overlayBanner">
-      <script type="text/javascript">
-	atOptions = {
-		'key' : '71e3506862232b8bbcecc3eee94c4749',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//formatsquareabominable.com/71e3506862232b8bbcecc3eee94c4749/invoke.js"></script>
-    </div>
-
-    <div class="redirect-box">
-      <h1>Please Wait</h1>
-      <p>You are being redirected to the secure page...</p>
-      <div class="spinner" aria-hidden="true"></div>
-    </div>
-  </div>
-
-  <!-- redirect script -->
+  <!-- Rotasi script -->
   <script>
-    function showLoadingAndRedirect(url) {
-      var overlay = document.getElementById('redirectOverlay');
-      overlay.style.display = 'flex';
-      overlay.setAttribute('aria-hidden', 'false');
-      setTimeout(function() {
-        overlay.style.display = 'none';
-        overlay.setAttribute('aria-hidden', 'true');
-        window.location.href = url;
-      }, 2000);
+    // fungsi rotasi
+    function startRotation(selector, interval){
+      const items = document.querySelectorAll(selector);
+      if(items.length === 0) return;
+      let current = 0;
+      setInterval(()=>{
+        items[current].classList.remove('active');
+        current = (current + 1) % items.length;
+        items[current].classList.add('active');
+      }, interval);
     }
+    // jalankan rotasi (2 detik = 2000 ms)
+    startRotation('#adRotator .banner', 2000);
+    startRotation('#nativeRotator1 .native', 2000);
+    startRotation('#nativeRotator2 .native', 2000);
   </script>
 
-  <!-- Histats (kept as is) -->
-  <script type="text/javascript">
-    var _Hasync= _Hasync|| [];
-    _Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
-    _Hasync.push(['Histats.fasi', '1']);
-    _Hasync.push(['Histats.track_hits', '']);
-    (function() {
-      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-      hs.src = ('//s10.histats.com/js15_as.js');
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-    })();
-  </script>
-  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4980999&101" alt="counter free hit unique web" border="0"></a></noscript>
-
-</body>
-</html>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4980999&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
