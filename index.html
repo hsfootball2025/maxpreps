@@ -28,7 +28,13 @@
     .search{background:rgba(255,255,255,0.12);border-radius:6px;padding:6px 10px;cursor:pointer}
     .signin{background:#fff;color:var(--red);padding:6px 12px;border-radius:6px;font-weight:700;cursor:pointer;border:none}
 
-    /* IKLAN */
+    /* IKLAN – MOBILE ONLY */
+    .mobile-only { display:none; }
+    @media(max-width:768px){
+      .nav{display:none}
+      .mobile-only { display:block; }
+    }
+
     .ad-wrapper{
       width:100%;
       text-align:center;
@@ -37,14 +43,6 @@
       margin:12px 0 20px 0;
       border-radius:6px;
       box-shadow:0 1px 4px rgba(0,0,0,0.08);
-    }
-    .ad-desktop { display:block; }
-    .ad-mobile { display:none; }
-
-    @media(max-width:768px){
-      .nav{display:none}
-      .ad-desktop { display:none; }
-      .ad-mobile { display:block; }
     }
 
     /* KONTEN */
@@ -93,29 +91,23 @@
       <div class="actions">
         <div class="search" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">🔍</div>
         <button class="signin" onclick="window.open('https://nfhsnetwork.hudl-stream.xyz/register.php')">
-  <img 
-    src="https://i.imgur.com/BWQ5HPX.png" 
-    alt="User"
-    style="width:22px;height:22px;display:block;"
-  >
-</button>
+          <img src="https://i.imgur.com/BWQ5HPX.png" style="width:22px;height:22px;display:block;">
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- 🔰 IKLAN ADSTERRA ATAS (DI-GANTI SESUAI PERMINTAAN) -->
-  <div class="ad-wrapper">
-    <!-- replacement: banner 320x50 (base64 script you provided) -->
+  <!-- IKLAN MOBILE ONLY -->
+  <div class="ad-wrapper mobile-only">
     <script>document.write(atob("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoJYXRPcHRpb25zID0gewoJCSdrZXknIDogJ2RkMTJhNTU0ZGI2NDgyZTBkYmUzYTEwMmI5ZDc1YmIyJywKCQknZm9ybWF0JyA6ICdpZnJhbWUnLAoJCSdoZWlnaHQnIDogNTAsCgkJJ3dpZHRoJyA6IDMyMCwKCQkncGFyYW1zJyA6IHt9Cgl9Owo8L3NjcmlwdD4KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iLy93d3cuaGlnaHBlcmZvcm1hbmNlZm9ybWF0LmNvbS9kZDEyYTU1NGRiNjQ4MmUwZGJlM2ExMDJiOWQ3NWJiMi9pbnZva2UuanMiPjwvc2NyaXB0Pg=="));</script>
   </div>
 
-  <!-- KONTEN -->
+  <!-- CONTENT -->
   <main class="page">
     <div class="card hero">
       <div class="hero-figure">
         <video class="hero-video" autoplay muted loop playsinline>
-          <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4" type="video/mp4">
-          Browser Anda tidak mendukung video HTML5.
+          <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4">
         </video>
         <div class="hero-overlay">
           <h2>SUBSCRIBE TO WATCH</h2>
@@ -126,9 +118,9 @@
 
     <div style="height:30px"></div>
 
-    <!-- 🔰 IKLAN ADSTERRA BAWAH (DI-GANTI SESUAI PERMINTAAN) -->
-    <div class="ad-wrapper">
-      <script type="text/javascript">
+    <!-- IKLAN BAWAH MOBILE ONLY -->
+    <div class="ad-wrapper mobile-only">
+      <script>
         atOptions = {
           'key' : 'ba4b839b8718e0071c162f4a4896d426',
           'format' : 'iframe',
@@ -137,92 +129,97 @@
           'params' : {}
         };
       </script>
-      <script type="text/javascript" src="//formatsquareabominable.com/ba4b839b8718e0071c162f4a4896d426/invoke.js"></script>
+      <script src="//formatsquareabominable.com/ba4b839b8718e0071c162f4a4896d426/invoke.js"></script>
     </div>
 
-    <!-- 🔹 Latest Articles -->
+    <!-- Latest Articles -->
     <div style="height:18px"></div>
     <div class="card" style="padding:18px;border-radius:10px">
       <h2 style="margin-top:0">Latest Articles</h2>
+
       <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-        <h3 style="margin:6px 0">FOOTBALL: IMG vs. St. Frances is off</h3>
+        <h3>FOOTBALL: IMG vs. St. Frances is off</h3>
         <p style="margin:0;color:var(--muted)">Florida power says postponement of contest from this week to mid-December raised concerns about safety and college transition for seniors.</p>
       </article>
+
       <article style="padding:10px 0;border-top:1px solid #f0f0f0">
-        <h3 style="margin:6px 0">FOOTBALL: MaxPreps Top 25 scoreboard</h3>
+        <h3>FOOTBALL: MaxPreps Top 25 scoreboard</h3>
         <p style="margin:0;color:var(--muted)">No. 21 Cass Tech, No. 23 Clay-Chalkville only MaxPreps Top 25 teams in postseason action this week.</p>
       </article>
     </div>
   </main>
 
-  <!-- IKON BANTUAN (CHAT ICON) -->
+  <!-- CHAT ICON -->
   <div class="chat-icon" onclick="alert('Subscribe to Watch')">
     <svg viewBox="0 0 24 24">
       <path d="M12 3C7.03 3 3 6.58 3 11c0 2.39 1.2 4.55 3.17 6.03L5 21l3.45-1.84C9.36 19.38 10.65 19.7 12 19.7c4.97 0 9-3.58 9-8s-4.03-8-9-8zm.01 14.2c-1.14 0-2.25-.25-3.24-.72l-.23-.11-2.05 1.09.55-2.16-.15-.23C5.4 13.63 5 12.34 5 11c0-3.31 3.14-6 7-6s7 2.69 7 6-3.14 6-6.99 6.2z"/>
     </svg>
   </div>
 
-  <!-- 🔹 Histats -->
-  <!-- Histats.com  START  (aync)-->
-  <script type="text/javascript">var _Hasync= _Hasync|| [];
-  _Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
-  _Hasync.push(['Histats.fasi', '1']);
-  _Hasync.push(['Histats.track_hits', '']);
-  (function() {
-  var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-  hs.src = ('//s10.histats.com/js15_as.js');
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-  })();</script>
-  <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4980999&101" alt="" border="0"></a></noscript>
-  <!-- Histats.com  END  -->
+  <!-- HISTATS -->
+  <script>
+    var _Hasync= _Hasync|| [];
+    _Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+      hs.src = ('//s10.histats.com/js15_as.js');
+      (document.head || document.body).appendChild(hs);
+    })();
+  </script>
+  <noscript>
+    <a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4980999&101"></a>
+  </noscript>
 
-<!-- Gambar dan Artikel Tambahan -->
+<!-- ARTICLE IMAGE + ARTICLE FULL -->
 <div style="margin-top:40px; text-align:center; background:#fff; padding:20px; border-radius:12px;">
-  <img src="https://archive.org/download/capture_20251107_1941/Capture.JPG" alt="High school football: Landen Williams-Callis, David Gabriel-Georges headline MaxPreps National Player of the Year watch list" style="width:100%; border-radius:12px; max-height:600px; object-fit:cover;">
+  <img src="https://archive.org/download/capture_20251107_1941/Capture.JPG" style="width:100%; border-radius:12px; max-height:600px; object-fit:cover;">
   <div style="text-align:left; padding:20px 10px; max-width:900px; margin:auto;">
-    <h3 style="margin-top:15px;">High school football: Landen Williams-Callis, David Gabriel-Georges headline MaxPreps National Player of the Year watch list</h3>
-    <p style="color:var(--muted); font-size:15px;">Find out who is in the running to join the list of past winners that includes Derrick Henry, Kyler Murray and Caleb Downs.</p>
-    <p style="font-weight:bold; margin-bottom:4px;">Thumbnail image of this article’s writer: Zack Poff</p>
-    <p style="margin-top:0;">By <strong>Zack Poff</strong></p>
-    <p>The 2025 high school football season is entering the postseason phase, meaning it is time to look at standout performers in the mix for MaxPreps National Player of the Year. Derrick Henry, Kyler Murray, Bryce Young, Jaxson Dart and Caleb Downs are some of the notable past winners of the award.</p>
-    <p>Tyler Atkinson of Grayson (Loganville, Ga.), Jared Curtis of Nashville Christian (Nashville, Tenn.) and Madden Williams of St. John Bosco (Bellflower, Calif.) are among the 10 players highlighted on the watch list. The race is still wide open, however, and players not featured on this list are not excluded from consideration for MaxPreps National Player of the Year, which will be named in January.</p>
-    <p>Atkinson has been a huge contributor for the No. 2 team in the MaxPreps Top 25 and after missing the first two games of the season. He leads the defending AAAAAA state champs in tackles (55), tackles for loss (18) and sacks (7) as they enter the playoffs 10-0.</p>
-    <p>Curtis was named the 2024 MaxPreps Tennessee Player of the Year and is putting together another remarkable season for the Eagles. He has thrown for 1,587 yards and 26 touchdowns to go with 44 carries for 392 yards and seven more scores while leading Nashville Christian to a 10-0 record.</p>
-    <p>Williams just broke St. John Bosco's school record hauling in his 27th career touchdown reception and has been a playmaker for the No. 4 team in the MaxPreps Top 25. He has had at least one receiving score in every game this season.</p>
-    <p>The list includes seven seniors, two juniors and one sophomore. Roye Oliver III of Hamilton (Chandler, Ariz.) was the lone player from the Class of 2028 selected, while David Gabriel-Georges of Baylor (Chattanooga, Tenn.) and Landen Williams-Callis of Randle (Richmond, Texas) were the two juniors.</p>
-    <p>Team success and individual production are the primary factors in determining MaxPreps National Player of the Year. The 10 candidates featured below play for programs with a 94-3 overall record and nine of them play for teams in our expanded top 100 rankings.</p>
-    <p><strong>Past MaxPreps National Players of the Year:</strong><br>
-    2006 — Riley Dodge, QB, Southlake Carroll (Southlake, Texas)<br>
-    2007 — Terrelle Pryor, QB, Jeannette (Pa.)<br>
-    2008 — Garrett Gilbert, QB, Lake Travis (Austin, Texas)<br>
-    2009 — Dillon Baxter, ATH, Mission Bay (San Diego)<br>
-    2010 — Dano Graves, QB, Folsom (Calif.)<br>
-    2011 — Johnathan Gray, RB, Aledo (Texas)<br>
-    2012 — Derrick Henry, RB, Yulee (Fla.)<br>
-    2013 — Kyler Murray, QB, Allen (Texas)<br>
-    2014 — Kyler Murray, QB, Allen<br>
-    2015 — Derrick Brown, DL, Lanier (Sugar Hill, Ga.)<br>
-    2016 — Tate Martell, QB, Bishop Gorman (Las Vegas)<br>
-    2017 — J.T. Daniels, QB, Mater Dei (Santa Ana, Calif.)<br>
-    2018 — Bru McCoy, WR, Mater Dei<br>
-    2019 — D.J. Uiagalelei, QB, St. John Bosco (Bellflower, Calif.) / Bryce Young, QB, Mater Dei<br>
-    2020 — Jaxson Dart, QB, Corner Canyon (Draper, Utah)<br>
-    2021 — Cade Klubnik, QB, Westlake (Austin, Texas)<br>
-    2022 — Caleb Downs, S, Mill Creek (Hoschton, Ga.)<br>
-    2023 — D.J. Lagway, QB, Willis (Texas)<br>
-    2024 — Quentin Gibson, WR, North Crowley (Fort Worth, Texas)
+
+    <h3>High school football: Landen Williams-Callis, David Gabriel-Georges headline MaxPreps National Player of the Year watch list</h3>
+    <p style="color:var(--muted); font-size:15px;">
+      Find out who is in the running to join the list of past winners that includes Derrick Henry, Kyler Murray and Caleb Downs.
+    </p>
+
+    <p><strong>By Zack Poff</strong></p>
+
+    <p>The 2025 high school football season is entering the postseason phase...</p>
+    <p>Tyler Atkinson of Grayson (Loganville, Ga.)...</p>
+    <p>Curtis was named the 2024 MaxPreps Tennessee Player of the Year...</p>
+    <p>Williams just broke St. John Bosco's school record...</p>
+    <p>The list includes seven seniors...</p>
+
+    <p><strong>Past MaxPreps National Players of the Year:</strong></p>
+    <p>
+      2006 — Riley Dodge, QB, Southlake Carroll (Southlake, Texas)<br>
+      2007 — Terrelle Pryor, QB, Jeannette (Pa.)<br>
+      2008 — Garrett Gilbert, QB, Lake Travis (Austin, Texas)<br>
+      2009 — Dillon Baxter, ATH, Mission Bay (San Diego)<br>
+      2010 — Dano Graves, QB, Folsom (Calif.)<br>
+      2011 — Johnathan Gray, RB, Aledo (Texas)<br>
+      2012 — Derrick Henry, RB, Yulee (Fla.)<br>
+      2013 — Kyler Murray, QB, Allen (Texas)<br>
+      2014 — Kyler Murray, QB, Allen<br>
+      2015 — Derrick Brown, DL, Lanier (Sugar Hill, Ga.)<br>
+      2016 — Tate Martell, QB, Bishop Gorman (Las Vegas)<br>
+      2017 — J.T. Daniels, QB, Mater Dei (Santa Ana, Calif.)<br>
+      2018 — Bru McCoy, WR, Mater Dei<br>
+      2019 — D.J. Uiagalelei / Bryce Young<br>
+      2020 — Jaxson Dart, Corner Canyon<br>
+      2021 — Cade Klubnik, Westlake<br>
+      2022 — Caleb Downs, Mill Creek<br>
+      2023 — D.J. Lagway, Willis<br>
+      2024 — Quentin Gibson, North Crowley
     </p>
   </div>
 </div>
 
-<!-- ADDED: NATIVE BANNER PALING BAWAH (DI-GANTI SESUAI PERMINTAAN) -->
-<div style="width:100%; text-align:center; margin:30px 0;">
-  <script async="async" data-cfasync="false" src="//formatsquareabominable.com/d57fa5540bf1402d7b0c2346e5f77081/invoke.js"></script>
+<!-- NATIVE BOTTOM – MOBILE ONLY -->
+<div class="mobile-only" style="width:100%; text-align:center; margin:30px 0;">
+  <script async data-cfasync="false" src="//formatsquareabominable.com/d57fa5540bf1402d7b0c2346e5f77081/invoke.js"></script>
   <div id="container-d57fa5540bf1402d7b0c2346e5f77081"></div>
 </div>
-
-<!-- ADDED: SOCIAL BAR (DI-GANTI SESUAI PERMINTAAN) -->
-<script type='text/javascript' src='//formatsquareabominable.com/ab/a7/b9/aba7b97d88d565dcf7d1dfbf1c99f6d6.js'></script>
-
+  
 </body>
 </html>
