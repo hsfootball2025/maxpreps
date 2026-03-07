@@ -1,145 +1,414 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta name="monetag" content="c26606c1ff8f29d1b0a3835c701b0b27">
-	<script src="https://3nbf4.com/act/files/tag.min.js?z=10249958" data-cfasync="false" async></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MaxPreps - Network</title>
-  <style>
-    :root {
-      --red:#c8102e;
-      --dark:#b80b20;
-      --bg:#f2f3f5;
-      --card:#ffffff;
-      --muted:#6b6b6b;
-      --container:1100px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#111}
 
-    .topbar{background:var(--red);color:#fff}
-    .topbar .inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;padding:12px 20px}
-    .logo img{height:34px}
-    .nav{margin-left:28px;display:flex;gap:18px;align-items:center}
-    .nav a{color:#fff;text-decoration:none;font-weight:600}
-    .nav a:hover{text-decoration:underline}
-    .actions{margin-left:auto;display:flex;gap:12px;align-items:center}
-    .search{background:rgba(255,255,255,0.12);border-radius:6px;padding:6px 10px;cursor:pointer}
-    .signin{background:#fff;color:var(--red);padding:6px 12px;border-radius:6px;font-weight:700;cursor:pointer;border:none}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .mobile-only { display:none; }
-    @media(max-width:768px){ .nav{display:none} .mobile-only { display:block; } }
+<title>MaxPreps - Network</title>
 
-    .ad-wrapper{
-      width:100%;text-align:center;background:#fff;padding:10px 0;margin:12px 0 20px 0;border-radius:6px;
-      box-shadow:0 1px 4px rgba(0,0,0,0.08);
-    }
+<style>
 
-    .page{max-width:var(--container);margin:20px auto;padding:0 20px}
-    .card{background:var(--card);border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
-    .hero{padding:22px;border-radius:10px;overflow:hidden}
-    .hero-figure{position:relative;height:520px;background:#000;border-radius:8px;overflow:hidden}
-    .hero-video{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
-    .hero-overlay{position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:#fff;text-align:center}
-    .hero-overlay h2{font-size:32px;margin:0;font-weight:800;text-shadow:0 3px 10px rgba(0,0,0,0.6)}
-    .watch-btn{background:var(--red);border:none;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-size:16px}
-    .watch-btn:hover{background:var(--dark)}
+:root{
+--red:#e10600;
+--bg:#f2f3f5;
+--container:1100px;
+font-family:Inter,Arial,Helvetica,sans-serif;
+}
 
-    .article img{
-      width:100%;height:520px;object-fit:cover;border-radius:8px;
-    }
-    @media(max-width:600px){ .article img{ height:300px; } }
-    .article{background:#fff;padding:14px;border-radius:10px;margin:16px 0;box-shadow:0 2px 4px rgba(0,0,0,0.06)}
-    .article h3{margin:10px 0 6px;font-size:18px;font-weight:700}
-    .article p{margin-top:0;color:var(--muted);font-size:14px}
-  </style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--bg);
+}
+
+/* HEADER */
+
+.topbar{
+background:var(--red);
+color:#fff;
+}
+
+.topbar .inner{
+max-width:var(--container);
+margin:auto;
+display:flex;
+align-items:center;
+padding:12px 20px;
+}
+
+.logo img{
+height:32px;
+}
+
+.nav{
+display:flex;
+gap:20px;
+margin-left:25px;
+font-weight:700;
+font-size:14px;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+}
+
+.actions{
+margin-left:auto;
+display:flex;
+gap:14px;
+font-size:20px;
+cursor:pointer;
+}
+
+/* MOBILE HEADER */
+
+.mobile-header{
+display:none;
+background:var(--red);
+color:white;
+padding:12px 16px;
+align-items:center;
+justify-content:space-between;
+}
+
+.mobile-header img{
+height:26px;
+}
+
+.mobile-icons{
+display:flex;
+gap:16px;
+font-size:20px;
+}
+
+.mobile-menu{
+display:none;
+background:white;
+padding:15px;
+border-bottom:1px solid #ddd;
+}
+
+.mobile-menu a{
+display:block;
+padding:10px 0;
+text-decoration:none;
+color:#111;
+font-weight:600;
+border-bottom:1px solid #eee;
+}
+
+.mobile-menu.show{
+display:block;
+}
+
+/* AD */
+
+.ad-wrapper{
+width:100%;
+text-align:center;
+background:#fff;
+padding:10px 0;
+margin:12px 0 20px 0;
+border-radius:6px;
+box-shadow:0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* PAGE */
+
+.page{
+max-width:var(--container);
+margin:20px auto;
+padding:0 20px;
+}
+
+.hero{
+background:white;
+border-radius:10px;
+padding:20px;
+}
+
+.hero-video{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.hero-overlay{
+position:relative;
+margin-top:-300px;
+height:260px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.watch-btn{
+background:var(--red);
+border:none;
+color:white;
+padding:12px 28px;
+font-weight:700;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* POPUP */
+
+.popup-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.popup-box{
+background:white;
+width:92%;
+max-width:380px;
+border-radius:10px;
+padding:20px;
+text-align:center;
+}
+
+.role-btn{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ddd;
+background:#f7f7f7;
+cursor:pointer;
+font-weight:600;
+}
+
+/* FOOTER */
+
+.footer{
+width:100%;
+background:var(--red);
+color:white;
+text-align:center;
+padding:70px 20px;
+margin-top:40px;
+}
+
+.footer img{
+width:150px;
+margin-bottom:30px;
+}
+
+.footer-links{
+font-size:12px;
+opacity:.9;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:14px;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.topbar{
+display:none;
+}
+
+.mobile-header{
+display:flex;
+}
+
+.page{
+padding:0 14px;
+}
+
+.hero-video{
+height:320px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="inner">
-    <div class="logo"><a href="https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky" target="_blank"><img src="https://i.imgur.com/pbWfbiI.png"></a></div>
-    <nav class="nav"><a href="https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky">Baseball</a><a href="https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky">B. Basketball</a><a href="https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky">G. Basketball</a><a href="https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky">G. Volleyball</a></nav>
-    <div class="actions"><div class="search" onclick="window.open('https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky')">🔍</div><button class="signin" onclick="window.open('https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky')"><img src="https://i.imgur.com/BWQ5HPX.png" style="width:22px;height:22px;"></button></div>
-  </div>
-</header>
+<!-- MOBILE HEADER -->
 
- <div class="ad-wrapper">
-    <script>document.write(atob("PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoJYXRPcHRpb25zID0gewoJCSdrZXknIDogJ2RkMTJhNTU0ZGI2NDgyZTBkYmUzYTEwMmI5ZDc1YmIyJywKCQknZm9ybWF0JyA6ICdpZnJhbWUnLAoJCSdoZWlnaHQnIDogNTAsCgkJJ3dpZHRoJyA6IDMyMCwKCQkncGFyYW1zJyA6IHt9Cgl9Owo8L3NjcmlwdD4KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iLy93d3cuaGlnaHBlcmZvcm1hbmNlZm9ybWF0LmNvbS9kZDEyYTU1NGRiNjQ4MmUwZGJlM2ExMDJiOWQ3NWJiMi9pbnZva2UuanMiPjwvc2NyaXB0Pg=="));</script>
-  </div>
+<div class="mobile-header">
 
-<main class="page">
-  <div class="card hero">
-    <h3>HIGH SCHOOL SPORTS LIVE<h3>
-    <div class="hero-figure">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4">
-      </video>
-      <div class="hero-overlay"><h2>SUBSCRIBE TO WATCH</h2><button class="watch-btn" onclick="window.open('https://api.powerafftrky.com/t/clk?id=v9tpdtOaQf5eoZi5&s1=subaffiliate&s2=ky')">Watch Live</button></div>
-    </div>
-  </div>
+<div onclick="toggleMenu()">☰</div>
 
-  <div class="ad-wrapper">
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'ba4b839b8718e0071c162f4a4896d426',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//porchadvertise.com/ba4b839b8718e0071c162f4a4896d426/invoke.js"></script>
+<img src="https://i.imgur.com/pbWfbiI.png">
+
+<div class="mobile-icons">
+<span>🔍</span>
+<span>👤</span>
 </div>
 
-  <!-- First Article -->
-  <div class="article">
-    <a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/8boh0Cp.png"></a>
-    <h3>Highlights, recap: Nation's No. 1 quarterback, new Vanderbilt commit Jared Curtis accounts for six touchdowns in dominant state championship win</h3>
-    <p>Nashville Christian star finishes career with 177 total touchdowns, including 53 in the postseason</p>
-  </div>
+</div>
 
-  <!-- REPEATED ARTICLES WITH AD AFTER EACH -->
+<div class="mobile-menu" id="menu">
 
-  <!-- I'll insert 13 article blocks exactly like original but each followed by same 320x50 banner -->
+<a href="#">B. Basketball</a>
+<a href="#">Football</a>
+<a href="#">Baseball</a>
+<a href="#">G. Basketball</a>
+<a href="#">G. Volleyball</a>
 
-  <!-- ARTICLE LOOP START -->
+</div>
 
-   <div class="article"><a href="https://otieu.com/4/10250034"><img src="https://i.imgur.com/jqjcawK.png=Article+2"></a><h3>How to watch: Gainesville vs. Langston Hughes in Georgia state quarterfinal clash</h3><p>Circuit court grants injunction Wednesday, allowing 35 suspended Gainesville players to take the field.</p></div>
+<!-- DESKTOP HEADER -->
 
+<header class="topbar">
 
-  <!-- ARTICLE 2 -->
-  <div class="article"><a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/ALFUXJH.png=Article+2"></a><h3>High school football: Knox playoff loss ends record-breaking season, career for Myles McLaughlin</h3><p>Indiana sensation broke several rushing records but falls shy of Derrick Henry's career mark.</p></div>
+<div class="inner">
 
+<div class="logo">
+<img src="https://i.imgur.com/pbWfbiI.png">
+</div>
 
-  <!-- ARTICLE 3 -->
-  <div class="article"><a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/rGfADd8.png=Article+3"></a><h3>Ohio passes emergency referendum approving name, image, likeness for high school athletes</h3><p>Issue brought to forefront after lawsuit in October by five-star Ohio State commit Jamier Brown.</p></div>
+<nav class="nav">
+<a href="#">B. Basketball</a>
+<a href="#">Football</a>
+<a href="#">Baseball</a>
+<a href="#">G. Basketball</a>
+<a href="#">G. Volleyball</a>
+</nav>
 
+<div class="actions">
+🔍 👤
+</div>
 
-  <!-- ARTICLE 4 -->
-  <div class="article"><a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/pjzjKbg.png=Article+4"></a><h3>High school football rankings: Grayson takes over as No. 1 team in MaxPreps Top 25</h3><p>Corona Centennial jumps up to No. 2 after clinching spot in California's Southern Section Division 1 championship game.</p></div>
+</div>
 
+</header>
 
-  <!-- ARTICLE 5 -->
-  <div class="article"><a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/7ZidCt1.png=Article+5"></a><h3>Highlights, recap: No. 4 Corona Centennial outlasts No. 5 Mater Dei 28-27 in Southern Section semifinals</h3><p>Huskies block game-winning field goal attempt with nine seconds remaining.</p></div>
+<!-- BANNER IKLAN -->
 
+<div class="ad-wrapper">
 
+<script>
+  atOptions = {
+    'key' : 'bc664fe61efd4e29b1ead00ddda19aac',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/bc664fe61efd4e29b1ead00ddda19aac/invoke.js"></script>
 
-  <!-- ARTICLE 6 -->
-  <div class="article"><a href="https://porchadvertise.com/jgswk9x8e?key=fb1f75020852ca86ec12a508669711a1"><img src="https://i.imgur.com/66eTnoe.png=Article+5"></a><h3>HIGHLIGHTS: David Gabriel Georges of Baylor dominates rival McCallie again, running for 431 yards and seven touchdowns</h3><p>Junior star's performance helps Red Raiders advance to Division II Class AAA state championship game.</p></div>
-  
-<script
-  async="async"
-  data-cfasync="false"
-  src="//porchadvertise.com/d57fa5540bf1402d7b0c2346e5f77081/invoke.js"
-></script>
-<div id="container-d57fa5540bf1402d7b0c2346e5f77081"></div>
-  
+</div>
+
+<!-- PAGE -->
+
+<main class="page">
+
+<div class="hero">
+
+<video class="hero-video" autoplay muted loop playsinline>
+
+<source src="https://archive.org/download/the-fall-sports-season-is-back-on-the-nfhs-network/The%20Fall%20Sports%20Season%20is%20Back%20on%20the%20NFHS%20NETWORK%21%21.mp4">
+
+</video>
+
+<div class="hero-overlay">
+
+<h2>SUBSCRIBE TO WATCH</h2>
+
+<button class="watch-btn" onclick="openSmart()">
+Watch Live
+</button>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- POPUP -->
+
+<div class="popup-bg" id="popup">
+
+<div class="popup-box">
+
+<h3>Select your role</h3>
+
+<button class="role-btn" onclick="openSmart()">Athlete</button>
+<button class="role-btn" onclick="openSmart()">Parent</button>
+<button class="role-btn" onclick="openSmart()">Fan</button>
+<button class="role-btn" onclick="openSmart()">High School Coach</button>
+<button class="role-btn" onclick="openSmart()">Athletic Director</button>
+<button class="role-btn" onclick="openSmart()">College Coach</button>
+<button class="role-btn" onclick="openSmart()">Statistician</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<img src="https://i.imgur.com/pbWfbiI.png">
+
+<div class="footer-links">
+
+<a href="#">ABOUT</a>
+<a href="#">MOBILE APPS</a>
+<a href="#">SUBSCRIBE</a>
+<a href="#">PRIVACY POLICY</a>
+<a href="#">TERMS</a>
+<a href="#">SUPPORT</a>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show")
+}
+
+/* SMARTLINK */
+
+var smartlink="https://www.effectivegatecpm.com/dmg2jn7siq?key=26351620e77c7b37be4b9663cab46e97";
+
+function openSmart(){
+window.open(smartlink,'_blank');
+}
+
+/* popup muncul setelah 5 detik */
+
+setTimeout(function(){
+document.getElementById("popup").style.display="flex";
+},5000);
+
+</script>
+   <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
 <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4980999,4,0,0,0,00010000']);
+_Hasync.push(['Histats.start', '1,4980999,4,511,95,18,00000000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
@@ -149,6 +418,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4980999&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
-
 </body>
 </html>
+
